@@ -26,6 +26,7 @@ const Login = () => {
   const googleSignIn = async()=> {
     try {
       await signInWithGoogle();
+      console.log(signInWithGoogle)
     } catch (error) {
       setError(error.message);
     }

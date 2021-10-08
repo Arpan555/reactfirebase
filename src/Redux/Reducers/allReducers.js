@@ -4,11 +4,14 @@ const initialState={
     signupData:[],
     loginData:[]
 }
+const chat=[]
 export default function reducer(state=initialState,action)
 {
     switch(action.type)
     {
         case CHAT_DATA:
+            chat.push(action.payload)
+            localStorage.setItem("chat",JSON.stringify(chat))
             return{
                 ...state,
                 data:[...state.data,action.payload]
